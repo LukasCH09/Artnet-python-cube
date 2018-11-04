@@ -1,0 +1,130 @@
+{
+	"0": {
+		"7": {
+			"univers": 34,
+			"channel": 487
+		},
+		"9": {
+			"univers": 35,
+			"channel": 58
+		},
+		"11": {
+			"univers": 35,
+			"channel": 139
+		},
+		"13": {
+			"univers": 35,
+			"channel": 220
+		},
+		"15": {
+			"univers": 35,
+			"channel": 301
+		},
+		"17": {
+			"univers": 35,
+			"channel": 382
+		}
+	},
+	"1": {
+		"6": {
+			"univers": 43,
+			"channel": 220
+		},
+		"8": {
+			"univers": 39,
+			"channel": 382
+		},
+		"10": {
+			"univers": 38,
+			"channel": 325
+		},
+		"12": {
+			"univers": 38,
+			"channel": 244
+		},
+		"14": {
+			"univers": 37,
+			"channel": 382
+		},
+		"16": {
+			"univers": 36,
+			"channel": 325
+		},
+		"18": {
+			"univers": 36,
+			"channel": 244
+		}
+	},
+	"2": {
+		"5": {
+			"univers": 44,
+			"channel": 244
+		},
+		"7": {
+			"univers": 34,
+			"channel": 406
+		},
+		"9": {
+			"univers": 34,
+			"channel": 325
+		},
+		"11": {
+			"univers": 34,
+			"channel": 244
+		},
+		"13": {
+			"univers": 34,
+			"channel": 163
+		},
+		"15": {
+			"univers": 34,
+			"channel": 82
+		},
+		"17": {
+			"univers": 34,
+			"channel": 1
+		},
+		"19": {
+			"univers": 46,
+			"channel": 244
+		}
+	},
+	"3": {
+		"4": {
+			"univers": 44,
+			"channel": 163
+		},
+		"6": {
+			"univers": 43,
+			"channel": 139
+		},
+		"8": {
+			"univers": 39,
+			"channel": 301
+		},
+		"10": {
+			"univers": 38,
+			"channel": 406
+		},
+		"12": {
+			"univers": 38,
+			"channel": 163
+		},
+		"14": {
+			"univers": 37,
+			"channel": 301
+		},
+		"16": {
+			"univers": 36,
+			"channel": 406
+		},
+		"18": {
+			"univers": 36,
+			"channel": 163
+		},
+		"18": {
+			"univers": 46,
+			"channel": 163
+		}
+	}
+}
