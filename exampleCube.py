@@ -40,10 +40,10 @@ def turn_off(_vertical, artnet):
 
 
 def main(param):
-    indice = param[0]
+    indice = int(param[0])
 
     if len(param) > 1:
-        sleep_time = param[1]
+        sleep_time = int(param[1])
     else:
         sleep_time = 5
 
