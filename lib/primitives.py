@@ -62,6 +62,7 @@ class CubeAPI():
         # print(f'#################  x: {x_coord}, y: {y_coord}')
         with open('lib/cube.json') as json_data:
             d = json.load(json_data)
+        # print(f'strip_x: {strip_x}, strip_y: {strip_y}')
         strip = d[str(strip_x)][str(strip_y)]
         universe = strip['universe']
         channel = strip['channel']

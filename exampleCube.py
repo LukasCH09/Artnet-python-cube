@@ -43,7 +43,7 @@ def main(param):
     indice = int(param[0])
 
     if len(param) > 1:
-        sleep_time = int(param[1])
+        sleep_time = float(param[1])
     else:
         sleep_time = 5
 
@@ -90,7 +90,7 @@ if __name__ == '__main__':
             print(f"Allowed indices: {allowed_indices}")
             ind = input('Enter vertical indice :')
             try:
-                number = int(ind)
+                number = float(ind)
             except ValueError:
                 print("Invalid number")
             if number not in allowed_indices:

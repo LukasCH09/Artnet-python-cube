@@ -11,15 +11,25 @@ packet_size = 512				# it is not necessary to send whole universe
 
 def main(universe):
     a = StupidArtnet(target_ip, universe, packet_size)
+    a.flash_all()  # send single packet with all channels at 255
+
+    time.sleep(3)  # wait a bit, 1 sec
+
+    a.blackout()
     a.start()
+    return
     # a.flash_all()
     packet = bytearray(packet_size)
     for i in range(packet_size):  # fill packet with sequential values
         packet[i] = 255
     a.set(packet)
-    a.show()
-    time.sleep(5)
-    a.blackout()
+    count = 0
+    while True:
+        print(f"flash {count}")
+        count += 1
+        a.show()
+        time.sleep(1)
+        a.blackout()
 
 
 if __name__ == '__main__':
