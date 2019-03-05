@@ -5,6 +5,7 @@ from lib.StupidArtnet import StupidArtnet
 import time
 
 target_ip = '127.0.0.1'  # typically in 2.x or 10.x range
+port = 6454  # for the simulator, the second cube is on an other port not an different ip adresse
 universe = 0  # see docs
 packet_size = 512  # it is not necessary to send whole universe
 allowed_indices = [i for i in range(0, 9)] + \
@@ -40,8 +41,10 @@ def turn_off(_vertical, artnet):
 
 
 def main(param):
+    global port  # just for test
     indice = int(param[0])
-
+    if indice > 8 and indice < 18:
+        port = 6455
     if len(param) > 1:
         sleep_time = float(param[1])
     else:
@@ -50,10 +53,11 @@ def main(param):
     # CREATING A STUPID ARTNET OBJECT
     # SETUP NEEDS A FEW ELEMENTS
     # TARGET_IP   = DEFAULT 127.0.0.1
+    # PORT        = DEFAULT 6454
     # UNIVERSE    = DEFAULT 0
     # PACKET_SIZE = DEFAULT 512
     # FRAME_RATE  = DEFAULT 30
-    a = StupidArtnet(target_ip, universe, packet_size)
+    a = StupidArtnet(target_ip, port, universe, packet_size)
 
     a.set_simplified(False)
     # MORE ADVANCED CAN BE SET WITH SETTERS IF NEEDED
