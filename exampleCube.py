@@ -44,7 +44,7 @@ def main(param):
     global port  # just for test
     indice = int(param[0])
     if indice > 8 and indice < 18:
-        port = 6455
+        port = 6454
     if len(param) > 1:
         sleep_time = float(param[1])
     else:

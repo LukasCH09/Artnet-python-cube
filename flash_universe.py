@@ -1,22 +1,31 @@
 from lib.StupidArtnet import StupidArtnet
+from lib.StupidArtSync import StupidArtnetSync
 import sys
 import time
 
 
-target_ip = '127.0.0.1'
-#target_ip = '192.168.0.50'	 # typically in 2.x or 10.x range
+# target_ip = '127.0.0.1'
+
+# target_ip = '192.168.0.50'	 # typically in 2.x or 10.x range
 # universe = 0 					# see docs
-packet_size = 512				# it is not necessary to send whole universe
+# it is not necessary to send whole universe
 
 
-def main(universe):
-    a = StupidArtnet(target_ip, universe, packet_size)
+def main(universe, blackout):
+    target_ip = '2.16.18.12'
+    packet_size = 512
+    port = 6454
+    a = StupidArtnet(target_ip, port, universe, packet_size)
+    b = StupidArtnetSync(target_ip,port)
     a.flash_all()  # send single packet with all channels at 255
-
-    time.sleep(3)  # wait a bit, 1 sec
-
-    a.blackout()
     a.start()
+    time.sleep(5)  # wait a bit, 1 sec
+    a.stop()
+    if blackout:
+        a.blackout()
+
+    # time.sleep(3)  # wait a bit, 1 sec
+    #a.stop()
     return
     # a.flash_all()
     packet = bytearray(packet_size)
@@ -35,7 +44,8 @@ def main(universe):
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         universe = sys.argv[1]
+        blackout = sys.argv[2]
         print(f"Flashing universe: {universe}")
-        main(int(universe))
+        main(int(universe), bool(blackout))
     else:
         print("Wrong argument")

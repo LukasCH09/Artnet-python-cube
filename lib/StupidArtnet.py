@@ -41,7 +41,7 @@ class StupidArtnet():
         self.make_header()
 
     def __del__(self):
-        self.stop()
+        # self.stop()
         self.close()
 
     def __str__(self):
@@ -127,6 +127,7 @@ class StupidArtnet():
         self.__clock = Timer((1000.0 / self.fps) / 1000.0, self.start)
         self.__clock.daemon = True
         self.__clock.start()
+        # self.__clock.join()
 
     def stop(self):
         """Stops thread clock."""
@@ -264,15 +265,25 @@ class StupidArtnet():
     def flash_all(self):
         """Sends 255's all across."""
         packet = bytearray(self.PACKET_SIZE)
-        [255 for i in packet]
-        # for i in range(self.PACKET_SIZE):
-        # 	packet[i] = 255
+        # [255 for i in packet]
+        for i in range(self.PACKET_SIZE):
+            packet[i] = 255
         self.set(packet)
-        self.show()
+        # self.show()
 
     ##
     # UTILS
     ##
+    def flash_0_0(self):
+        """Sends 255's all across."""
+        packet = bytearray(self.PACKET_SIZE)
+        # [255 for i in packet]
+        for i in range(self.PACKET_SIZE):
+            if i in range(3):
+                packet[i] = 255
+            else:
+                packet[i] = 255
+        self.set(packet)
 
     @staticmethod
     def shift_this(number, high_first=True):
